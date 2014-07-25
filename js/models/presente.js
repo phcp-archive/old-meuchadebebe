@@ -1,12 +1,10 @@
-$(function() {
-  var Presente = Parse.Object.extend("Presente", {
-  	defaults: {
-  		nome: "",
-  		user: null
-  	}
-  });
+var Presente = Parse.Object.extend("Presente", {
+  defaults: {
+	nome: "",
+	user: null
+  }
+});
 
-  var ListaPresentes = Parse.Collection.extend({
-  	model: Presente
-  });
+var ListaPresentes = Parse.Collection.extend({
+  model: Presente
 });
