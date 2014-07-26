@@ -5,25 +5,27 @@ $(function() {
   Parse.initialize("iD91Kruwny1uP1UNRCspAGNHSLHINUkEGuhe2N6E",
    "jcCjFbysCwxymP6dfpBC4QE2ch75S3Y7xwevEvHo");
 
-  function include(file_path){
-    var j = document.createElement("script"); /* criando um elemento script: </script><script></script> */
-    j.type = "text/javascript"; /* informando o type como text/javacript: <script type="text/javascript"></script>*/
-    j.src = file_path; /* Inserindo um src com o valor do parâmetro file_path: <script type="javascript" src="+file_path+"></script>*/
-    document.body.appendChild(j); /* Inserindo o seu elemento(no caso o j) como filho(child) do  BODY: <html><body><script type="javascript" src="+file_path+"></script></body></html> */
-  }
+  function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
 
-  //incluindo um arquivo com a função include()
-  include("js/models/evento.js");
-  include("js/models/convite.js");
-  include("js/models/presente.js");
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
 
-  include("js/views/moms_module/login_view.js");
-  include("js/views/moms_module/menu_view.js");
-  include("js/views/moms_module/moms_view.js");
-  include("js/views/moms_module/invite_view.js");
+    // Fire the loading
+    head.appendChild(script);
+}
 
 
-  var AppState = Parse.Object.extend("AppState");
+var myPrettyCode = function() {
+
+   var AppState = Parse.Object.extend("AppState");
 
   var AppView = Parse.View.extend({
     el: $("#meuchadebebe"),
@@ -58,4 +60,18 @@ $(function() {
   new AppRouter;
   new AppView;
   Parse.history.start();
+};
+
+  //incluindo um arquivo com a função loadScript()
+  loadScript("js/models/evento.js", myPrettyCode);
+  loadScript("js/models/convite.js", myPrettyCode);
+  loadScript("js/models/presente.js", myPrettyCode);
+
+  loadScript("js/views/moms_module/login_view.js", myPrettyCode);
+  loadScript("js/views/moms_module/menu_view.js", myPrettyCode);
+  loadScript("js/views/moms_module/moms_view.js", myPrettyCode);
+  loadScript("js/views/moms_module/invite_view.js", myPrettyCode);
+
+
+  
 });
