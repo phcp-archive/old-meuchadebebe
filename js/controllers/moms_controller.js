@@ -1,4 +1,5 @@
 $(function() {
+  Parse.$ = jQuery;
   var AppState = Parse.Object.extend("AppState");
 
   var AppView = Parse.View.extend({
