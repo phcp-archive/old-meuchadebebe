@@ -5,8 +5,7 @@ $(function() {
   Parse.initialize("iD91Kruwny1uP1UNRCspAGNHSLHINUkEGuhe2N6E",
    "jcCjFbysCwxymP6dfpBC4QE2ch75S3Y7xwevEvHo");
 
-  function loadScript(url, callback)
-{
+  function loadScript(url, callback){
     // Adding the script tag to the head as suggested before
     var head = document.getElementsByTagName('head')[0];
     var script = document.createElement('script');
@@ -22,18 +21,7 @@ $(function() {
     head.appendChild(script);
 }
 
-  //incluindo um arquivo com a função loadScript()
-  loadScript("js/models/evento.js", myPrettyCode);
-  loadScript("js/models/convite.js", myPrettyCode);
-  loadScript("js/models/presente.js", myPrettyCode);
-
-  loadScript("js/views/moms_module/login_view.js", myPrettyCode);
-  loadScript("js/views/moms_module/menu_view.js", myPrettyCode);
-  loadScript("js/views/moms_module/moms_view.js", myPrettyCode);
-  loadScript("js/views/moms_module/invite_view.js", myPrettyCode);
-
-
-var myPrettyCode = function() {
+var mainCode = function() {
 
    var AppState = Parse.Object.extend("AppState");
 
@@ -72,5 +60,13 @@ var myPrettyCode = function() {
   Parse.history.start();
 };
 
+  loadScript("js/models/evento.js", mainCode);
+  loadScript("js/models/convite.js", mainCode);
+  loadScript("js/models/presente.js", mainCode);
+
+  loadScript("js/views/moms_module/login_view.js", mainCode);
+  loadScript("js/views/moms_module/menu_view.js", mainCode);
+  loadScript("js/views/moms_module/moms_view.js", mainCode);
+  loadScript("js/views/moms_module/invite_view.js", mainCode);
   
 });
