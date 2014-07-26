@@ -22,6 +22,16 @@ $(function() {
     head.appendChild(script);
 }
 
+  //incluindo um arquivo com a função loadScript()
+  loadScript("js/models/evento.js", myPrettyCode);
+  loadScript("js/models/convite.js", myPrettyCode);
+  loadScript("js/models/presente.js", myPrettyCode);
+
+  loadScript("js/views/moms_module/login_view.js", myPrettyCode);
+  loadScript("js/views/moms_module/menu_view.js", myPrettyCode);
+  loadScript("js/views/moms_module/moms_view.js", myPrettyCode);
+  loadScript("js/views/moms_module/invite_view.js", myPrettyCode);
+
 
 var myPrettyCode = function() {
 
@@ -61,17 +71,6 @@ var myPrettyCode = function() {
   new AppView;
   Parse.history.start();
 };
-
-  //incluindo um arquivo com a função loadScript()
-  loadScript("js/models/evento.js", myPrettyCode);
-  loadScript("js/models/convite.js", myPrettyCode);
-  loadScript("js/models/presente.js", myPrettyCode);
-
-  loadScript("js/views/moms_module/login_view.js", myPrettyCode);
-  loadScript("js/views/moms_module/menu_view.js", myPrettyCode);
-  loadScript("js/views/moms_module/moms_view.js", myPrettyCode);
-  loadScript("js/views/moms_module/invite_view.js", myPrettyCode);
-
 
   
 });
