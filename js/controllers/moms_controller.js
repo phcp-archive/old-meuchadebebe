@@ -25,7 +25,7 @@ var mainCode = function() {
 
    var AppState = Parse.Object.extend("AppState");
 
-  var AppView = Parse.View.extend({
+   var AppView = Parse.View.extend({
     el: $("#meuchadebebe"),
 
     initialize: function() {
@@ -68,6 +68,6 @@ var mainCode = function() {
   loadScript("js/views/moms_module/menu_view.js", mainCode);
   loadScript("js/views/moms_module/moms_view.js", mainCode);
   loadScript("js/views/moms_module/invite_view.js", mainCode);
-  loadScript("js/views/present_module/present_view.js", mainCode);
+  loadScript("js/views/moms_module/present_view.js", mainCode);
   
 });
