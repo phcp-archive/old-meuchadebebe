@@ -28,7 +28,7 @@ var MenuView = Parse.View.extend({
   },
 
   listaPresentes: function(e) {
-    new GiftsView();
+    new PresenteView();
     this.undelegateEvents();
   },
 
