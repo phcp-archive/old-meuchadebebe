@@ -2,6 +2,7 @@ var MenuView = Parse.View.extend({
   events: {
     "click #inicio": "principal",
     "click #editar-evento": "editarEvento",
+    "click #lista-presentes": "listaPresentes",
     "click #convidar": "convidar",
     "click #logout": "logOut",
   },
