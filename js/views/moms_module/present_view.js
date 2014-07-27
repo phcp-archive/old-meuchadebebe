@@ -18,7 +18,7 @@ var PresenteView = Parse.View.extend({
     var evt = new Presente();
     evt.set("nome", nomedopresente);
     evt.set("quantidade", parseInt(quantidade));
-    
+    evt.set("usuario", Parse.User.current());  
 
     evt.save(null, {
       success: function(evento) {
