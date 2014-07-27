@@ -1,10 +1,6 @@
 var Presente = Parse.Object.extend("Presente", {
   defaults: {
 	nome: "",
-	user: null
+	quantidade: 0
   }
-});
-
-var ListaPresentes = Parse.Collection.extend({
-  model: Presente
 });
