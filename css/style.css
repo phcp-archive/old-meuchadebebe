@@ -71,6 +71,10 @@ p {
     font-weight: normal;
 }
 
-#invite-screen, #invite-screen p {
+#invite-screen, #invite-screen p, #reject-screen, #reject-screen p {
     text-align: center;
+}
+
+.hidden {
+    display: none !important;
 }
