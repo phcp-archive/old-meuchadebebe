@@ -14,11 +14,12 @@ var PresenteView = Parse.View.extend({
   save: function() {
     var nomedopresente = this.$("#event-nomedopresente").val();
     var quantidade = this.$("#event-quantidadedopresente").val();
+    var user = Parse.User.current();
 
     var evt = new Presente();
     evt.set("nome", nomedopresente);
     evt.set("quantidade", parseInt(quantidade));
-    evt.set("usuario", Parse.User.current());  
+    evt.set("usuario", user);  
 
     evt.save(null, {
       success: function(evento) {
