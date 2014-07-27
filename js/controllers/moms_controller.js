@@ -68,5 +68,6 @@ var mainCode = function() {
   loadScript("js/views/moms_module/menu_view.js", mainCode);
   loadScript("js/views/moms_module/moms_view.js", mainCode);
   loadScript("js/views/moms_module/invite_view.js", mainCode);
+  loadScript("js/views/present_module/present_view.js", mainCode);
   
 });
